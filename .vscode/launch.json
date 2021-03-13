@@ -13,7 +13,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "/Users/admin/Desktop/CodingDojo/Projects_and_Algorithms/Assignments/Arrays1_Todo1.js"
+            "program": "/Users/admin/Desktop/CodingDojo/Projects_and_Algorithms/Assignments/Arrays1_MinToFront.js"
         }
     ]
 }
