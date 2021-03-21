@@ -10,6 +10,7 @@ class Node {
 // 2.) Remove Front. Write a method to remove the head node and return the new list head node. If the list is empty, return null.
 // 3.) Front. Write a method to return the value (not the node) at the head of the list. If the list is empty, return null.
 // 4.) Contains. Add a method contains(value) to your SLL class, which is given a value as a parameter.  Return a boolean (true/false); true, if the list possesses a node that contains the provided value.
+// 5.) Display. Create display() that returns a string containing all list values. Build what you wish console.log(myList) did!
 class SLL {
     constructor() {
         this.head = null;
@@ -33,6 +34,17 @@ class SLL {
             return this.head.value;
         }
         return null;
+    }
+
+    display() {
+        var output = "";
+        var runner = this.head;
+        while(runner) {
+            output += runner.value + " ";
+            runner = runner.next;
+        }
+        return output;
+
     }
 
     contains(value) {
@@ -67,6 +79,7 @@ console.log(ssList.front()); //result is "1" because it returns the value, inste
 console.log(ssList.contains(1)); //result is "true"
 ssList.addFront(3); //Adds 3 to front of linked list
 console.log(ssList.length()); //result is 2. There are 2 nodes in this linked list. 
+console.log(ssList.display()); // result is 3 1
 
 //Lecture Notes. This is how you turn an array into an linked list. 
 
@@ -75,5 +88,7 @@ var myLinkedList = new SLL();
 var myNumArr = [10, 69, 29, 90, 68, 34, 45, 21, 23, 91];
 
 for (var i = 0; i < myNumArr.length; i++) {
-	myLinkedList.appendNode(new Node(myNumArr[i]));
+	myLinkedList.addFront(myNumArr[i]);
 }
+
+console.log(myLinkedList.display()); //result is 91 23 21 45 34 68 90 29 69 10
