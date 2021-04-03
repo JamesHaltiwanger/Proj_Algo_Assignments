@@ -2,7 +2,7 @@
 function minToFront(arr) {
     var min = arr[0];
     var idx = 0;
-    for (var i = 1; i < arr.length; i++){ //This for loop finds what the min is, and what index it is located.
+    for (let i = 1; i < arr.length; i++){ //This for loop finds what the min is, and what index it is located.
         if (arr[i] < min) { 
             min = arr[i];
             idx = i;
@@ -17,3 +17,17 @@ function minToFront(arr) {
 }
 var array1 = [4, 2, 1, 3, 5];
 console.log(minToFront(array1)); //result is [1, 4, 2, 3, 5]
+
+function reverseArray(arr) {
+    var front = 0;
+    var end = 0;
+    for (let i = 0; i < arr.length/2; i++) {
+    end = arr[arr.length - 1 - i];
+    front = arr[i];
+    arr[i] = end;
+    arr[arr.length - 1 - i] = front;
+    }
+    return arr;
+}
+var array2 = [1, 2, 3, 4, 5];
+console.log(reverseArray(array2)); //result is [5, 4, 3, 2, 1]!
